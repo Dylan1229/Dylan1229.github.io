@@ -562,9 +562,20 @@
       text-decoration-color: var(--accent);
     }
 
-    /* Hide on narrower screens where it would clash with the reading column */
+    /* On narrower screens, the news panel flows inline inside main
+       (between the intro section and Research Interests) instead of
+       floating in the right margin. */
     @media (max-width: 1200px) {
-      .news-panel { display: none; }
+      .news-panel {
+        position: static;
+        width: 100%;
+        max-width: none;
+        max-height: none;
+        margin: 0 0 1rem;
+      }
+      .news-panel-body {
+        max-height: 320px;
+      }
     }
 
     /* ===== Reduced motion ===== */
@@ -605,55 +616,6 @@
       </svg>
     </button>
   </header>
-
-  <aside class="news-panel" aria-label="Recent news">
-    <div class="news-panel-header">
-      <h2 class="news-panel-title">News</h2>
-      <span class="news-panel-hint">scroll ↓</span>
-    </div>
-    <div class="news-panel-body">
-      <div class="news-item">
-        <span class="news-date">2026.05</span>
-        <p class="news-text">Starting at Amazon Web Services, Annapurna Lab as an Applied Scientist Intern in Santa Clara.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2025.12</span>
-        <p class="news-text">I will attend <a href="https://neurips.cc/">NeurIPS'25</a>, see you in San Diego, CA.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2025.12</span>
-        <p class="news-text">Our paper "DUO: No Compromise to Accuracy Degradation" is accepted at NeurIPS'25. Thanks to all collaborators!</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2025.08</span>
-        <p class="news-text">Joined Rice University as a Ph.D. student, advised by Dr. Yuke Wang.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2025.07</span>
-        <p class="news-text">Our paper "Model Steering: Learning with a Reference Model Improves Generalization Bounds and Scaling Laws" is accepted at ICML'25 Spotlight. Thanks to all collaborators!</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2025.06</span>
-        <p class="news-text">I will attend <a href="https://cvpr.thecvf.com/Conferences/2025">CVPR'25</a>, see you in Nashville, TN.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2025.06</span>
-        <p class="news-text">Our paper "BMQSim: Overcoming Memory Constraints in Quantum Circuit Simulation with a High-Fidelity Compression Framework" received ICS'25 Best Paper Runner-up. Thanks to all collaborators!</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2025.05</span>
-        <p class="news-text">Completed M.S. in Computer Science at Indiana University Bloomington.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2024.11</span>
-        <p class="news-text">I will attend <a href="https://sc24.supercomputing.org/">SC'24</a>, see you in Atlanta, GA.</p>
-      </div>
-      <div class="news-item">
-        <span class="news-date">2024.11</span>
-        <p class="news-text">Our paper "Accelerating Communication in Deep Learning Recommendation Model Training with Dual-Level Adaptive Lossy Compression" is accepted at SC'24. Thanks to all collaborators!</p>
-      </div>
-    </div>
-  </aside>
 
   <main class="page">
 
@@ -715,6 +677,55 @@
     </section>
 
     <hr class="rule">
+
+    <aside class="news-panel" aria-label="Recent news">
+      <div class="news-panel-header">
+        <h2 class="news-panel-title">News</h2>
+        <span class="news-panel-hint">scroll ↓</span>
+      </div>
+      <div class="news-panel-body">
+        <div class="news-item">
+          <span class="news-date">2026.05</span>
+          <p class="news-text">Starting at Amazon Web Services, Annapurna Lab as an Applied Scientist Intern in Santa Clara.</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.12</span>
+          <p class="news-text">I will attend <a href="https://neurips.cc/">NeurIPS'25</a>, see you in San Diego, CA.</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.12</span>
+          <p class="news-text">Our paper "DUO: No Compromise to Accuracy Degradation" is accepted at NeurIPS'25. Thanks to all collaborators!</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.08</span>
+          <p class="news-text">Joined Rice University as a Ph.D. student, advised by Dr. Yuke Wang.</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.07</span>
+          <p class="news-text">Our paper "Model Steering: Learning with a Reference Model Improves Generalization Bounds and Scaling Laws" is accepted at ICML'25 Spotlight. Thanks to all collaborators!</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.06</span>
+          <p class="news-text">I will attend <a href="https://cvpr.thecvf.com/Conferences/2025">CVPR'25</a>, see you in Nashville, TN.</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.06</span>
+          <p class="news-text">Our paper "BMQSim: Overcoming Memory Constraints in Quantum Circuit Simulation with a High-Fidelity Compression Framework" received ICS'25 Best Paper Runner-up. Thanks to all collaborators!</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025.05</span>
+          <p class="news-text">Completed M.S. in Computer Science at Indiana University Bloomington.</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2024.11</span>
+          <p class="news-text">I will attend <a href="https://sc24.supercomputing.org/">SC'24</a>, see you in Atlanta, GA.</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2024.11</span>
+          <p class="news-text">Our paper "Accelerating Communication in Deep Learning Recommendation Model Training with Dual-Level Adaptive Lossy Compression" is accepted at SC'24. Thanks to all collaborators!</p>
+        </div>
+      </div>
+    </aside>
 
     <!-- ===== Research Interests ===== -->
     <section id="research-interests">
