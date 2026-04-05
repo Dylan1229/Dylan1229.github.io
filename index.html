@@ -319,6 +319,50 @@
       font-weight: 600;
     }
 
+    /* Collapsible preprints block under Publications */
+    details.more-publications {
+      margin-top: 2.25rem;
+    }
+    details.more-publications > summary {
+      list-style: none;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: var(--fs-meta);
+      color: var(--ink-muted);
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--rule);
+      user-select: none;
+      transition: color 150ms ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    details.more-publications > summary::-webkit-details-marker { display: none; }
+    details.more-publications > summary::marker { content: ""; }
+    details.more-publications > summary::after {
+      content: "↓";
+      color: var(--ink-faint);
+      transition: color 150ms ease, transform 150ms ease;
+    }
+    details.more-publications[open] > summary::after {
+      content: "↑";
+    }
+    details.more-publications > summary:hover,
+    details.more-publications > summary:hover::after {
+      color: var(--accent);
+    }
+    details.more-publications > summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    details.more-publications .s-open { display: none; }
+    details.more-publications[open] .s-closed { display: none; }
+    details.more-publications[open] .s-open { display: inline; }
+    details.more-publications .entry-list-more {
+      margin-top: 2.25rem;
+    }
+
     @media (max-width: 640px) {
       .entry {
         grid-template-columns: 1fr;
@@ -730,6 +774,16 @@
           </div>
         </li>
 
+      </ol>
+
+      <details class="more-publications">
+        <summary>
+          <span class="s-closed">Show 6 more preprints</span>
+          <span class="s-open">Show less</span>
+        </summary>
+
+        <ol class="entry-list entry-list-more">
+
         <li class="entry">
           <div class="entry-meta">Preprint</div>
           <div class="entry-body">
@@ -781,7 +835,8 @@
           </div>
         </li>
 
-      </ol>
+        </ol>
+      </details>
     </section>
 
     <hr class="rule">
