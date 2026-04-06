@@ -587,21 +587,12 @@
       *, *::before, *::after { cursor: none !important; }
     }
     #cursor-dot {
-      position: fixed;
-      top: -4px; left: -4px;
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--ink);
-      pointer-events: none;
-      z-index: 10001;
-      will-change: transform;
-      opacity: 0;
-      transition: opacity 0.3s ease, background 0.3s ease;
+      display: none;
     }
     #cursor-ring {
       position: fixed;
-      top: -18px; left: -18px;
-      width: 36px; height: 36px;
+      top: -12px; left: -12px;
+      width: 24px; height: 24px;
       border-radius: 50%;
       border: 1.5px solid var(--ink-muted);
       pointer-events: none;
@@ -617,12 +608,9 @@
     }
     /* Grow ring when hovering interactive elements */
     #cursor-ring.hovering {
-      width: 48px; height: 48px;
-      top: -24px; left: -24px;
+      width: 36px; height: 36px;
+      top: -18px; left: -18px;
       border-color: var(--accent);
-    }
-    #cursor-dot.hovering {
-      background: var(--accent);
     }
     @media (hover: none) {
       #cursor-dot, #cursor-ring { display: none !important; }
