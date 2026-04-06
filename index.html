@@ -582,6 +582,28 @@
       }
     }
 
+    /* ===== Cursor spotlight (warm glow follows mouse on desktop) ===== */
+    #cursor-glow {
+      position: fixed;
+      top: -300px;
+      left: -300px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(146, 64, 14, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 9999;
+      will-change: transform;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    body.cursor-active #cursor-glow {
+      opacity: 1;
+    }
+    [data-theme="dark"] #cursor-glow {
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%);
+    }
+
     /* ===== Reduced motion ===== */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -589,6 +611,12 @@
         animation: none !important;
       }
       html { scroll-behavior: auto; }
+      #cursor-glow { display: none !important; }
+    }
+
+    /* Hide cursor glow on touch devices (no mouse = no spotlight) */
+    @media (hover: none) {
+      #cursor-glow { display: none !important; }
     }
 
     /* ===== Print ===== */
@@ -601,6 +629,8 @@
   </style>
 </head>
 <body>
+
+  <div id="cursor-glow" aria-hidden="true"></div>
 
   <header class="theme-bar">
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark mode" type="button">
@@ -1003,6 +1033,22 @@
         try { localStorage.setItem('fanjiang-theme', next); } catch (e) {}
       });
     });
+  </script>
+
+  <script>
+    (function () {
+      var glow = document.getElementById('cursor-glow');
+      if (!glow || !window.matchMedia('(hover: hover)').matches) return;
+      document.addEventListener('mousemove', function (e) {
+        glow.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+        if (!document.body.classList.contains('cursor-active')) {
+          document.body.classList.add('cursor-active');
+        }
+      });
+      document.addEventListener('mouseleave', function () {
+        document.body.classList.remove('cursor-active');
+      });
+    })();
   </script>
 
 </body>
