@@ -366,6 +366,23 @@
     details.more-publications .entry-list-more {
       margin-top: 2.25rem;
     }
+    details.more-publications .more-note {
+      margin: 1.25rem 0 0;
+      font-family: var(--font-mono);
+      font-size: var(--fs-meta);
+      color: var(--ink-faint);
+    }
+    /* Compact variant for collapsible service lists */
+    details.more-compact {
+      margin-top: 0.65rem;
+    }
+    details.more-compact > summary {
+      padding: 0.5rem 0;
+      border-top: none;
+    }
+    details.more-compact > .plain-list {
+      margin-top: 0.4rem;
+    }
 
     @media (max-width: 640px) {
       .entry {
@@ -861,11 +878,53 @@
 
       <details class="more-publications">
         <summary>
-          <span class="s-closed">Show 7 more preprints</span>
+          <span class="s-closed">Show 12 more papers</span>
           <span class="s-open">Show less</span>
         </summary>
 
+        <p class="more-note"><sup>&dagger;</sup> project lead</p>
+
         <ol class="entry-list entry-list-more">
+
+        <li class="entry">
+          <div class="entry-meta">NeurIPS'26 Workshop</div>
+          <div class="entry-body">
+              <p class="entry-title">Exploiting Per-Sequence Token Sparsity in Batched Block-Diffusion LLM Inference</p>
+              <p class="entry-authors">Eddie Sun, Mike Mao, Xinze Feng<sup>&dagger;</sup>, <span class="me">Fanjiang Ye</span><sup>&dagger;</sup>, Yuke Wang</p>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-meta">NeurIPS'26 Workshop</div>
+          <div class="entry-body">
+              <p class="entry-title">RefinementGuard: Counterexample-Directed Semantic Qualification for Hidden Agent-Tool Execution</p>
+              <p class="entry-authors">Adhyayan Veer Singh, <span class="me">Fanjiang Ye</span><sup>&dagger;</sup>, Yuke Wang</p>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-meta">Preprint</div>
+          <div class="entry-body">
+              <p class="entry-title">When to Synchronize, How Much to Repair: Cache Control for Autoregressive Video Diffusion</p>
+              <p class="entry-authors">Kairong Xu, Param Misra, Zachary Stenglein, Athri Karunamurthy, <span class="me">Fanjiang Ye</span><sup>&dagger;</sup>, Yuke Wang</p>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-meta">Preprint</div>
+          <div class="entry-body">
+              <p class="entry-title">RISA: Recoverable Sparse Attention for Block-Diffusion Language Models</p>
+              <p class="entry-authors">Xinrui Zhong, <span class="me">Fanjiang Ye</span>, Yuke Wang</p>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-meta">Preprint</div>
+          <div class="entry-body">
+              <p class="entry-title">SuBitKV: Sub-Bit KV Cache Compression for Autoregressive Video Generation</p>
+              <p class="entry-authors">Bowen Lin, Zhenghui Guo, <span class="me">Fanjiang Ye</span>, Boyuan Zhang, Sheng Di, Chengming Zhang</p>
+          </div>
+        </li>
 
         <li class="entry">
           <div class="entry-meta">Preprint</div>
@@ -1032,22 +1091,39 @@
         <li>EuroSys'27 Artifact Evaluation Committee</li>
         <li>ATC'26 Artifact Evaluation Committee</li>
         <li>SOSP'26 Artifact Evaluation Committee</li>
-        <li>CAIS'26 Artifact Evaluation Committee</li>
-        <li>MLSys'26 Artifact Evaluation Committee</li>
-        <li>EuroSys'26 Fall Artifact Evaluation Committee</li>
-        <li>ASPLOS'26 Summer Artifact Evaluation Committee</li>
-        <li>PPoPP'26 Artifact Evaluation Committee</li>
-        <li>ASPLOS'26 Spring Artifact Evaluation Committee</li>
-        <li>SOSP'25 Artifact Evaluation Committee</li>
       </ul>
+      <details class="more-publications more-compact">
+        <summary>
+          <span class="s-closed">Show 7 more</span>
+          <span class="s-open">Show less</span>
+        </summary>
+        <ul class="plain-list">
+          <li>CAIS'26 Artifact Evaluation Committee</li>
+          <li>MLSys'26 Artifact Evaluation Committee</li>
+          <li>EuroSys'26 Fall Artifact Evaluation Committee</li>
+          <li>ASPLOS'26 Summer Artifact Evaluation Committee</li>
+          <li>PPoPP'26 Artifact Evaluation Committee</li>
+          <li>ASPLOS'26 Spring Artifact Evaluation Committee</li>
+          <li>SOSP'25 Artifact Evaluation Committee</li>
+        </ul>
+      </details>
 
       <h3>Reviewer</h3>
       <ul class="plain-list">
+        <li>ICLR'27 Conference Reviewer</li>
         <li>NeurIPS'26 Conference Reviewer</li>
         <li>ECCV'26 Conference Reviewer</li>
-        <li>CVPR'26 Program Committee Reviewer</li>
-        <li>QCE'24 Sub-Reviewer</li>
       </ul>
+      <details class="more-publications more-compact">
+        <summary>
+          <span class="s-closed">Show 2 more</span>
+          <span class="s-open">Show less</span>
+        </summary>
+        <ul class="plain-list">
+          <li>CVPR'26 Program Committee Reviewer</li>
+          <li>QCE'24 Sub-Reviewer</li>
+        </ul>
+      </details>
     </section>
 
     <hr class="rule">
